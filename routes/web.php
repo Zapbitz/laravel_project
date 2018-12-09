@@ -13,5 +13,8 @@
 
 Route::get('/','PageController@home');
 Route::get('/blog','PageController@index');
-Route::get('/add','PageController@add');
-Route::post('/create','PageController@create');
+Route::get('/add','PageController@create');
+Route::get('/show/{id}','PageController@show');
+Route::post('/create','PageController@store');
+
+Route::resource('pages', 'PageController');

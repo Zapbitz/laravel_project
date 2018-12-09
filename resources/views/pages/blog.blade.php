@@ -7,7 +7,7 @@
         <h1 style="text-transform:uppercase;">{{ $projects->title }}</h1>
         <small>{{ $projects->created_at }}</small>
         <p>{{ $projects->body }}</p>
-        <a href="" class="btn btn-warning">Read More</a>
+        <a href="/show/{{$projects->id}}" class="btn btn-warning">Read More</a>
     </div>
     @endforeach
 @else

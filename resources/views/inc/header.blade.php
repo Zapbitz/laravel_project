@@ -5,11 +5,11 @@
     <div class="container">
         <div class="row">
             <div class="col">
-                <a class="navbar-brand" href="#">Navbar</a>
+                <a class="navbar-brand" href="#">{{config('app.name','MYBLOG')}}</a>
 
             </div>
 
-    <div class="col">
+    <div class="col-8 ">
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav">
         <li class="nav-item active">
@@ -22,7 +22,7 @@
                 <a class="nav-link" href="/about">ABOUT</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="/create">CREATE BLOG</a>
+            <a class="nav-link" href="/add">CREATE BLOG</a>
     </li>
       </ul>
     </div>

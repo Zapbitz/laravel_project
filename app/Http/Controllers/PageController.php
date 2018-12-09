@@ -23,11 +23,6 @@ class PageController extends Controller
 
     }
 
-    public function add()
-    {
-
-    }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -35,7 +30,7 @@ class PageController extends Controller
      */
     public function create()
     {
-        //
+        return view('pages.addpost');
 
     }
 
@@ -45,9 +40,14 @@ class PageController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Post $post)
     {
-        //
+        $post->title=request()->title;
+        $post->body=request()->msg;
+        $post->author="abhilash";
+        $post->save();
+        return redirect('/');
+        // return $post->all();
     }
 
     /**
@@ -58,7 +58,8 @@ class PageController extends Controller
      */
     public function show($id)
     {
-        //
+      $project = Post::find($id);
+      return view('pages.show',compact('project'));
     }
 
     /**
@@ -70,6 +71,7 @@ class PageController extends Controller
     public function edit($id)
     {
         //
+
     }
 
     /**
@@ -79,7 +81,7 @@ class PageController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Post $post, $id)
     {
         //
     }
